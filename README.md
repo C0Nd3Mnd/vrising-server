@@ -1,9 +1,9 @@
 # V Rising Dedicated Server (in a container)
 
-[![Docker Automated build](https://img.shields.io/docker/automated/didstopia/vrising-server.svg)](https://hub.docker.com/r/didstopia/vrising-server/)
-[![Docker build status](https://img.shields.io/docker/build/didstopia/vrising-server.svg)](https://hub.docker.com/r/didstopia/vrising-server/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/didstopia/vrising-server.svg)](https://hub.docker.com/r/didstopia/vrising-server/)
-[![Docker stars](https://img.shields.io/docker/stars/didstopia/vrising-server.svg)](https://hub.docker.com/r/didstopia/vrising-server)
+[![Docker Pulls](https://img.shields.io/docker/pulls/whalybird/vrising-server.svg)](https://hub.docker.com/r/whalybird/vrising-server/)
+[![Docker stars](https://img.shields.io/docker/stars/whalybird/vrising-server.svg)](https://hub.docker.com/r/whalybird/vrising-server)
+
+This image is based on [didstopia/vrising-server](https://hub.docker.com/r/didstopia/vrising-server), I just updated the base image in use and rebuilt the container to get up-to-date dependencies so **this image works with V Rising 1.0**. The source code is [available on GitHub](https://github.com/C0Nd3Mnd/vrising-server/).
 
 This image will always install/update to the latest steamcmd and V Rising server, all you have to do to update your server is to redeploy the container.
 
@@ -11,13 +11,13 @@ Also note that the entire `/steamcmd/vrising` folder can be mounted on the host 
 
 ## Usage
 
-**NOTE:** _See [docker-compose.yml](docker-compose.yml) (or [Dockerfile](Dockerfile)) for more information on all available options._
+**NOTE:** _See [docker-compose.yml](https://github.com/C0Nd3Mnd/vrising-server/blob/master/docker-compose.yml) (or [Dockerfile](Dockerfile)) for more information on all available options._
 
 ### Basic
 
 Mount ```/steamcmd/vrising``` and ```/app/vrising``` somewhere on the host to keep your data safe (first path has the server files, while the second path has the config and save files)
 
-Run the server once to generate the default configuration files, then optionally edit them under ```/app/vrising```, or alternatively use the available environment variables to configure the server (see [docker-compose.yml](docker-compose.yml) and [Dockerfile](Dockerfile)).
+Run the server once to generate the default configuration files, then optionally edit them under ```/app/vrising```, or alternatively use the available environment variables to configure the server (see [docker-compose.yml](https://github.com/C0Nd3Mnd/vrising-server/blob/master/docker-compose.yml) and [Dockerfile](https://github.com/C0Nd3Mnd/vrising-server/blob/master/Dockerfile)).
 
 ### Advanced
 
@@ -33,4 +33,4 @@ If using Docker for Windows *and* the File System passthrough option, make sure 
 
 ## License
 
-See [LICENSE](LICENSE)
+See [LICENSE](https://github.com/C0Nd3Mnd/vrising-server/blob/master/LICENSE)
