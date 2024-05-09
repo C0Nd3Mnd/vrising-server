@@ -4,7 +4,10 @@ services:
   vrising:
 
     # image: didstopia/vrising-server:latest
-    build: .
+    build:
+      context: .
+      tags:
+        - whalybird/vrising-server:latest
     container_name: vrising
     # restart: unless-stopped
     restart: "no"
