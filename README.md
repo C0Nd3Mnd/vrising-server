@@ -33,7 +33,7 @@ services:
 
 ### Switching from `didstopia/vrising-server` to this image
 
-Simply replace `image: didstopia/vrising-server:latest` with `image: whalybird/vrising-server:latest` and run `docker compose up -d`.
+Simply replace `image: didstopia/vrising-server:latest` with `image: whalybird/vrising-server:latest` in your existing Compose file and run `docker compose up -d`.
 
 ### Environment variables
 
