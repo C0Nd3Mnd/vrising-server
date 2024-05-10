@@ -3,7 +3,7 @@ services:
 
   vrising:
 
-    # image: didstopia/vrising-server:latest
+    # image: whalybird/vrising-server:latest
     build:
       context: .
       tags:
