@@ -31,11 +31,17 @@ services:
       - ./data:/app/vrising # Folder containing saves and settings. Should be owned by 1000:1000.
 ```
 
+### Switching from `didstopia/vrising-server` to this image
+
+Simply replace `image: didstopia/vrising-server:latest` with `image: whalybird/vrising-server:latest` and run `docker compose up -d`.
+
 ### Environment variables
+
+*(Place these under the `environment:` section in your Compose file)*
 
 * `V_RISING_SERVER_PERSISTENT_DATA_PATH` Path where V Rising should store settings and save games. I recommend leaving this at the default value and changing the volume binding instead (default: `"/app/vrising"`)
 * `V_RISING_SERVER_BRANCH` Server version to use (currently the only known version is `public`) (default: `"public"`)
-* `V_RISING_SERVER_START_MODE` Changes what happens on container start. `"0"` - update server and start afterward, `"1"` - update only (don't start), `"2"` - start only (don't update even if a newer version exists) (default: `"0"`)
+* `V_RISING_SERVER_START_MODE` Changes what happens on container start. `"0"` - update server and start afterward, `"1"` - update only (don't start), `"2"` - start only (don't update even if a newer version is available) (default: `"0"`)
 * `V_RISING_SERVER_UPDATE_MODE` Changes when pending updates are applied. `"0"` - update only when the container (re)starts, `"1"` - update as soon as an update is found and restart the server automatically (default: `"0"`)
 * `V_RISING_SERVER_DEFAULT_HOST_SETTINGS` Use default host settings. I recommend leaving this enabled and changing host settings via the environment variables described here instead (default: `true`)
 * `V_RISING_SERVER_DEFAULT_GAME_SETTINGS` Use default game settings. I recommend leaving this enabled and overriding the game settings you want to change via a custom preset instead (see **Custom preset** below) (default: `true`)
